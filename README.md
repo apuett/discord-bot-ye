@@ -1,2 +1,2 @@
-# discord-bot-ye
+# Kanye Discord Bot
 AI discord bot , ye
