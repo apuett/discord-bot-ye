@@ -7,6 +7,9 @@ jobs:
     steps:
       - run: |
           echo "${{ secrets.ENV_FILE }}" > .env
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       # This step checks out a copy of your repository.
       - uses: actions/checkout@v2
       - uses: superfly/flyctl-actions/setup-flyctl@master
