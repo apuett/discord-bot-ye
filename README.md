@@ -1,7 +1,7 @@
 # Kanye Discord Bot
 Discord bot that uses Cloud solutions to virtualize ye
 
-![alt text](https://github.com/apuett/Sentiment140_Discord_Bot/blob/master/assets/_walli_.PNG)
+![alt text](https://github.com/apuett/discord-bot-ye/blob/dev/assets/ye.jpg)
 
 
 # AI_Discord_Bot
