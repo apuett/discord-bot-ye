@@ -5,13 +5,13 @@ jobs:
     name: Deploy proxy
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "${{ secrets.ENV_FILE }}" > .env
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
       # This step checks out a copy of your repository.
       - uses: actions/checkout@v2
+      
+      - name: Create env file
+      - run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only -a discord-bot-ye
         env:
