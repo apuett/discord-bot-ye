@@ -17,6 +17,8 @@ jobs:
         run: |
           echo "${{ secrets.ENV_FILE }}" > .env
 
+      # Can have a scale upto 3 for free
+      # To stop app set scale to 0
       - name: Fly Deployment
         run: | 
           flyctl scale count 0 -a discord-bot-ye
