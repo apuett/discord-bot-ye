@@ -21,12 +21,8 @@ jobs:
       # To stop app set scale to 0
       - name: Fly Deployment
         run: | 
-<<<<<<< HEAD
-=======
-          flyctl scale count 0 -a discord-bot-ye -y
->>>>>>> 2ce791ad9ef16de236e9f0901a9ed3e70e9614e6
           flyctl deploy --remote-only -a discord-bot-ye
-          flyctl scale count 2 -a discord-bot-ye -y
+          flyctl scale count 0 -a discord-bot-ye -y
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_DEPLOY_TOKEN }}
           
