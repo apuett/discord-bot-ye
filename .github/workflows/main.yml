@@ -1,0 +1,25 @@
+name: Deploy to Fly
+on:
+  pull_request:
+    branches: 
+      - main
+    types: [closed]
+    
+jobs:
+  deploy:
+    name: Deploy proxy
+    runs-on: ubuntu-latest
+    steps:
+      # This step checks out a copy of your repository.
+      - uses: actions/checkout@v2
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      
+      - name: Create env file
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+
+      - name: Fly Deployment
+        run: flyctl deploy --remote-only -a discord-bot-ye
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_DEPLOY_TOKEN }}
+          
